@@ -76,9 +76,9 @@ Private Sub BtnTestFillCombo_Click()
     Text1.Text = GetTestResults
     DoEvents
     
-    dt = Timer
-    sl = StrArr_WToA(sl)
-    dt = Timer - dt
+    'dt = Timer
+    'sl = StrArr_WToA(sl)
+    'dt = Timer - dt
     
     TestResuls.Add "Ansi convert finished"
     TestResuls.Add "time dt = " & dt & " s"
@@ -121,6 +121,7 @@ Private Function StrArr_WToA(sl() As String) As String()
     Next
     StrArr_WToA = asl
 End Function
+
 
 ''' #################### ' Modul MCombo ' #################### '
 'Public Property Let ComboBox_List(this As ComboBox, sl() As String)

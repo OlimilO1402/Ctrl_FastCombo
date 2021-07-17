@@ -84,10 +84,13 @@ Private Sub BtnTestFillCombo_Click()
     TestResuls.Add "time dt = " & dt & " s"
     Text1.Text = GetTestResults
     DoEvents
-    
+    Combo1.Visible = False
+    DoEvents
     dt = Timer
     Me.ComboBox_List(Combo1) = sl
     dt = Timer - dt
+    
+    Combo1.Visible = True
     
     TestResuls.Add "Combo fill finished"
     TestResuls.Add "time dt = " & dt & " s"
@@ -108,7 +111,7 @@ Function GetStrArr(ByVal n As Long) As String()
     Dim i As Long, dx As Double: dx = 1 / n
     ReDim sl(0 To n) 'As String
     For i = 0 To n
-        sl(i) = Format((n - i) * dx, "0.00000")
+        sl(i) = Format((n - i) * dx, "0.00000") & vbNullChar
     Next
     GetStrArr = sl
 End Function
