@@ -25,7 +25,7 @@ Private Const CB_INITSTORAGE As Long = &H161
 Private mCombo As ComboBox
 
 Dim sl() As String
-Dim TestResuls As New Collection
+Dim TestResults As New Collection
 
 Friend Sub New_(Combo As ComboBox)
     Set mCombo = Combo

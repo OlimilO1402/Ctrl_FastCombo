@@ -61,7 +61,7 @@ Private Const CB_INITSTORAGE As Long = &H161
 
 
 Dim sl() As String
-Dim TestResuls As New Collection
+Dim TestResults As New Collection
 
 Private Sub BtnTestFillCombo_Click()
     
@@ -71,8 +71,8 @@ Private Sub BtnTestFillCombo_Click()
     sl = GetStrArr(100000)
     dt = Timer - dt
     
-    TestResuls.Add "Fill: sl(0) = " & sl(0)
-    TestResuls.Add "time dt = " & dt & " s"
+    TestResults.Add "Fill: sl(0) = " & sl(0)
+    TestResults.Add "time dt = " & dt & " s"
     Text1.Text = GetTestResults
     DoEvents
     
@@ -80,8 +80,8 @@ Private Sub BtnTestFillCombo_Click()
     sl = StrArr_WToA(sl)
     dt = Timer - dt
     
-    TestResuls.Add "Ansi convert finished"
-    TestResuls.Add "time dt = " & dt & " s"
+    TestResults.Add "Ansi convert finished"
+    TestResults.Add "time dt = " & dt & " s"
     Text1.Text = GetTestResults
     DoEvents
     Combo1.Visible = False
@@ -92,8 +92,8 @@ Private Sub BtnTestFillCombo_Click()
     
     Combo1.Visible = True
     
-    TestResuls.Add "Combo fill finished"
-    TestResuls.Add "time dt = " & dt & " s"
+    TestResults.Add "Combo fill finished"
+    TestResults.Add "time dt = " & dt & " s"
     Text1.Text = GetTestResults
     
 End Sub
@@ -101,8 +101,8 @@ End Sub
 Function GetTestResults() As String
     Dim s As String
     Dim i As Long
-    For i = 1 To TestResuls.Count
-        s = s & TestResuls(i) & vbCrLf
+    For i = 1 To TestResults.Count
+        s = s & TestResults(i) & vbCrLf
     Next
     GetTestResults = s
 End Function

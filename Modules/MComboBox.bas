@@ -26,7 +26,7 @@ Private Const CBS_HASSTRINGS     As Long = &H200&
 
 
 Dim sl() As String
-Dim TestResuls As New Collection
+Dim TestResults As New Collection
 
 Public Property Let ComboBox_List(this As ComboBox, sl() As String)
     Dim i As Long
