@@ -39,10 +39,10 @@ Public Property Let ComboBox_List(this As ComboBox, sl() As String)
         Dim hr As Long
 
 'LBS_NOREDRAW
-        'hr = SendMessage(CBhWnd, LBS_NOREDRAW, ByVal BOOL_FALSE, ByVal 0&)
+        hr = SendMessage(CBhWnd, LBS_NOREDRAW, ByVal BOOL_FALSE, ByVal 0&)
 
 'LBS_NODATA
-        'hr = SendMessage(CBhWnd, LBS_NODATA, ByVal BOOL_FALSE, ByVal 0&)
+        hr = SendMessage(CBhWnd, LBS_NODATA, ByVal BOOL_FALSE, ByVal 0&)
 
 'LB_SETCOUNT
         hr = SendMessage(CBhWnd, LB_SETCOUNT, ByVal n, ByVal 0&)
@@ -52,8 +52,8 @@ Public Property Let ComboBox_List(this As ComboBox, sl() As String)
 
 'CBS_SORT = False
 'CBS_HASSTRINGS = False
-        'hr = SendMessage(CBhWnd, CBS_SORT, ByVal BOOL_FALSE, ByVal 0&)
-        'hr = SendMessage(CBhWnd, CBS_HASSTRINGS, ByVal BOOL_FALSE, ByVal 0&)
+        hr = SendMessage(CBhWnd, CBS_SORT, ByVal BOOL_FALSE, ByVal 0&)
+        hr = SendMessage(CBhWnd, CBS_HASSTRINGS, ByVal BOOL_FALSE, ByVal 0&)
 
         hr = SendMessage(CBhWnd, WM_SETREDRAW, ByVal BOOL_FALSE, ByVal 0&)
 
@@ -65,11 +65,12 @@ Public Property Let ComboBox_List(this As ComboBox, sl() As String)
             hr = SendMessage(CBhWnd, CB_ADDSTRING, ByVal 0&, ByVal StrPtr(sl(i)))
         Next
         'ZeroSAPtr ArrPtr(lsl)
-        'hr = SendMessage(CBhWnd, CBS_OWNERDRAWFIXED, ByVal BOOL_TRUE, ByVal 0&)
+        hr = SendMessage(CBhWnd, CBS_OWNERDRAWFIXED, ByVal BOOL_TRUE, ByVal 0&)
         '.Visible = True
         hr = SendMessage(CBhWnd, WM_SETREDRAW, ByVal BOOL_TRUE, ByVal 0&)
         
         .Refresh
+        .Visible = True
     End With
 End Property
 Public Property Get ComboBox_List(this As ComboBox) As String()

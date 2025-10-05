@@ -93,6 +93,7 @@ Private Sub BtnTestFillCombo_Click()
     TestResults.Add "time dt = " & dt & " s"
     Text1.Text = GetTestResults
     
+    Combo1.Visible = True
 End Sub
 
 Function GetTestResults() As String
